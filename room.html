@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Room</title>
+
+	<style type="text/css">
+		
+	body{
+
+		background-image: url("room.jpg");
+		background-repeat: no-repeat;
+		background-size: 75%;
+
+
+	}
+
+	</style>
+
+
+
+</head>
+
+
+
+
+
+<body onload="drawAtLoad()">
+
+	<canvas id = "canvas2" width="1350" height="85" class = "canvas2"></canvas>
+	<canvas id = "canvas" width="1349" height="329" class = "bottomLine"></canvas>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+	var canvas;
+	var canvas2;
+	var ctx;
+	var ctx2;
+	var x = 0;
+	var y = 0;
+	var x2 = 1000;
+	var pic;
+	var qImg = null;
+	//var canImg = "img\\3can.png";
+	var stop = false;
+	var clearVaribale;
+	var wrongAnswerCount = 0;
+	//var audio= new Audio('sound/city.mp3'); 
+
+function drawAtLoad(){
+		//document.getElementById("q1").style.visibility = 'hidden';
+		//document.getElementById("next").style.visibility = 'hidden';
+		canvas = document.getElementById("canvas");
+		canvas2 = document.getElementById("canvas2");
+		ctx = canvas.getContext("2d");
+		ctx2 = canvas2.getContext("2d");
+		// drawImage();	
+		// drawImage2();
+	}	
+	
+function drawImage(jj){
+
+		pic = jj;
+		ctx.clearRect(-100,-55,1350,225);
+		var img=new Image();
+		img.src=pic;
+		ctx.drawImage(img, -100,-55,300,225);		
+		
+	}
+
+	function drawImage2(jj){
+
+		pic2 = jj;
+		ctx2.clearRect(40,-70,1350,225);
+		var img=new Image();
+		img.src=pic2;
+		ctx2.drawImage(img, 40,-70,300,225);		
+		
+	}
+
+window.onkeydown = function(e) {
+
+	//console.log("kkkk");
+	var key = e.keyCode ? e.keyCode : e.which;
+	//console.log(key);
+	
+      		
+      		drawImage("on.png");
+      		drawImage2("on.png");
+      		//drawImage2();
+      		
+
+	
+
+}
+
+window.onkeyup = function(e) {
+
+	//console.log("aaaa");
+	var key = e.keyCode ? e.keyCode : e.which;
+	//console.log(key);
+	
+      		
+      		//pic2 = null;
+      		drawImage("");
+      		drawImage2("");
+      		//drawImage2();
+
+	
+
+}
+
+
+</script>
+</html>
